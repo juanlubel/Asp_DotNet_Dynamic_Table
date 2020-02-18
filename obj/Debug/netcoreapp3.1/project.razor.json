@@ -20499,6 +20499,32 @@
     "CSharpLanguageVersion": 800
   },
   "RootNamespace": "ApiASPLinux",
-  "Documents": [],
+  "Documents": [
+    {
+      "FilePath": "/home/juanlu/develop/ApiASPLinux/Views/Colores/Index.cshtml",
+      "TargetPath": "Views/Colores/Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/juanlu/develop/ApiASPLinux/Views/Colores/Delete.cshtml",
+      "TargetPath": "Views/Colores/Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/juanlu/develop/ApiASPLinux/Views/Colores/Edit.cshtml",
+      "TargetPath": "Views/Colores/Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/juanlu/develop/ApiASPLinux/Views/Colores/Details.cshtml",
+      "TargetPath": "Views/Colores/Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/juanlu/develop/ApiASPLinux/Views/Colores/Create.cshtml",
+      "TargetPath": "Views/Colores/Create.cshtml",
+      "FileKind": "mvc"
+    }
+  ],
   "SerializationFormat": "0.2"
 }

@@ -27,7 +27,7 @@ namespace ApiASPLinux.Controllers
         }
 
         // GET: api/Operarios/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "GetOperario")]
         public IActionResult Get(int id)
         {
             var operario = context.Operarios.FirstOrDefault(operario => operario.Id == id);
@@ -46,7 +46,7 @@ namespace ApiASPLinux.Controllers
             if (ModelState.IsValid) {
                 context.Operarios.Add(operario);
                 context.SaveChanges();
-                return new CreatedAtRouteResult("Get", new {id = operario.Id}, operario);
+                return new CreatedAtRouteResult("GetOperario", new {id = operario.Id}, operario);
             }
 
             return BadRequest(ModelState);
@@ -62,7 +62,7 @@ namespace ApiASPLinux.Controllers
             }
             context.Entry(operario).State = EntityState.Modified;
             context.SaveChanges();
-            return new CreatedAtRouteResult("Get", new {id = operario.Id}, operario);
+            return new CreatedAtRouteResult("GetOperario", new {id = operario.Id}, operario);
         }
 
         // DELETE: api/ApiWithActions/5

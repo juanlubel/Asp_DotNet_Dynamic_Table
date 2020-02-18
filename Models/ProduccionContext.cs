@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using ApiASPLinux.Models;
 
 namespace ApiASPLinux.Models
 {
@@ -10,5 +11,7 @@ namespace ApiASPLinux.Models
         }
 
         public DbSet<Operario> Operarios {get; set;}
+
+        public DbSet<Colores> Colores {get; set;}
     }
 }

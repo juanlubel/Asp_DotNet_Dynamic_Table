@@ -8224,19 +8224,19 @@
     ]
   },
   "packageFolders": {
-    "/root/.nuget/packages/": {}
+    "/home/juanlu/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/app/ApiASPLinux.csproj",
+      "projectUniqueName": "/home/juanlu/develop/ApiASPLinux/ApiASPLinux.csproj",
       "projectName": "ApiASPLinux",
-      "projectPath": "/app/ApiASPLinux.csproj",
-      "packagesPath": "/root/.nuget/packages/",
-      "outputPath": "/app/obj/",
+      "projectPath": "/home/juanlu/develop/ApiASPLinux/ApiASPLinux.csproj",
+      "packagesPath": "/home/juanlu/.nuget/packages/",
+      "outputPath": "/home/juanlu/develop/ApiASPLinux/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/root/.nuget/NuGet/NuGet.Config"
+        "/home/juanlu/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

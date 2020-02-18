@@ -1,19 +1,25 @@
-#build container
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine as build
-
-WORKDIR /build
-COPY . .
-RUN dotnet tool install -g Cake.Tool
-ENV PATH="${PATH}:/root/.dotnet/tools"
-RUN dotnet cake build.cake --runtime=alpine-x64
-
-#runtime container
-FROM mcr.microsoft.com/dotnet/core/runtime:3.1-alpine
-
-COPY --from=build /build/publish /app
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
 WORKDIR /app
-
+EXPOSE 80
+EXPOSE 443
 EXPOSE 5000
+EXPOSE 5001
 
-RUN dotnet --list-runtimes
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
+WORKDIR /src
+COPY ["ApiASPLinux.csproj", "./"]
+RUN dotnet restore "./ApiASPLinux.csproj"
+COPY . .
+WORKDIR "/src/."
+RUN dotnet build "ApiASPLinux.csproj" -c Release -o /app/build
+
+FROM build AS publish
+COPY ./entrypoint.sh ./app/
+RUN chmod +x ./app/entrypoint.sh
+CMD /bin/bash ./app/entrypoint.sh
+RUN dotnet publish "ApiASPLinux.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "ApiASPLinux.dll"]
